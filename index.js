@@ -1,19 +1,45 @@
-let express=require("express");
-let app = express();
-let userroutes=require('./routes/userroutes');
-let projectroutes=require('./routes/projectroutes');
-let categoryroutes=require('./routes/categoryroutes');
-let mongoose=require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/project_collector").then(()=>{
-    console.log("connected with mongodb database");
-}).catch(()=>{
-    console.log(err);
-})
-app.use(express.json());
-app.use("/api/user",userroutes);
-app.use("/api/project",projectroutes);
-app.use("/api/category",categoryroutes);
 
-app.listen(3000,()=>{
-    console.log("server listening on port 3000")
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+require("dotenv").config();
+
+const userroutes = require("./routes/userroutes");
+const projectroutes = require("./routes/projectroutes");
+const categoryroutes = require("./routes/categoryroutes");
+const authroutes = require("./collections/authroutes");
+
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// API Routes
+app.use("/api/user", userroutes);
+app.use("/api/project", projectroutes);
+app.use("/api/category", categoryroutes);
+app.use("/api/auth", authroutes);
+
+// Home route
+app.get("/", (req, res) => {
+    res.send("Project Collector App Backend is running");
+});
+
+// MongoDB Connection
+mongoose.connect(
+    process.env.MONGO_URI || "mongodb://127.0.0.1:27017/project_collector"
+)
+.then(() => {
+    console.log("Connected to MongoDB successfully");
 })
+.catch((error) => {
+    console.log("MongoDB connection error:", error.message);
+});
+
+// Server
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});

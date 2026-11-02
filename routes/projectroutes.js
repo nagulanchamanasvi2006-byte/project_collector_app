@@ -1,9 +1,11 @@
+
 const express = require("express");
 
 const Project = require("../collections/projects");
 
 const router = express.Router();
 
+// Add a new project
 router.post("/", async (req, res) => {
     try {
         const project = await Project.create(req.body);
@@ -19,6 +21,7 @@ router.post("/", async (req, res) => {
     }
 });
 
+// Get all projects
 router.get("/", async (req, res) => {
     try {
         const projects = await Project.find();
@@ -31,6 +34,7 @@ router.get("/", async (req, res) => {
     }
 });
 
+// Get a project by ID
 router.get("/:id", async (req, res) => {
     try {
         const project = await Project.findById(req.params.id);
@@ -49,12 +53,15 @@ router.get("/:id", async (req, res) => {
     }
 });
 
+// Update a project by ID
 router.put("/:id", async (req, res) => {
     try {
         const project = await Project.findByIdAndUpdate(
             req.params.id,
             req.body,
-            { new: true }
+            {
+                returnDocument: "after"
+            }
         );
 
         if (!project) {
@@ -74,6 +81,7 @@ router.put("/:id", async (req, res) => {
     }
 });
 
+// Delete a project by ID
 router.delete("/:id", async (req, res) => {
     try {
         const project = await Project.findByIdAndDelete(req.params.id);

@@ -1,0 +1,156 @@
+/* Home Page */
+.home-page {
+  min-height: 100vh;
+  background: #f4f7fc;
+}
+
+/* Hero Section */
+.home-hero {
+  padding: 110px 0;
+  background: linear-gradient(120deg, #eef4ff, #ffffff);
+}
+
+.hero-title {
+  color: #172554;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.hero-description {
+  color: #64748b;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 700px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.hero-buttons .btn {
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+/* Idea Card */
+.idea-card {
+  background: #ffffff;
+  padding: 70px 30px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
+}
+
+.idea-icon {
+  font-size: 4.5rem;
+  margin-bottom: 20px;
+}
+
+.idea-card h2 {
+  color: #172554;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.idea-card p {
+  color: #475569;
+  font-size: 1.1rem;
+}
+
+/* Features Section */
+.home-features {
+  padding: 60px 0 90px;
+  background: #f4f7fc;
+}
+
+.features-title {
+  color: #172554;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 35px;
+}
+
+.feature-card {
+  height: 100%;
+  padding: 35px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.1);
+}
+
+.feature-card h3 {
+  color: #172554;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.feature-icon {
+  margin-right: 12px;
+}
+
+.feature-card p {
+  color: #64748b;
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .home-hero {
+    padding: 70px 0;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .idea-card {
+    margin-top: 45px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-hero {
+    padding: 50px 0;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .idea-card {
+    padding: 45px 20px;
+  }
+
+  .features-title {
+    font-size: 1.8rem;
+  }
+
+  .feature-card {
+    padding: 25px;
+  }
+}
