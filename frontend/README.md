@@ -1,10 +1,15 @@
 # React + Vite
 
-## Backend API
+## Deployment
 
-Set `VITE_API_URL` to the base URL of the deployed Express backend in the
-frontend hosting service, then rebuild and redeploy the frontend. Do not include
-an API path or trailing slash. Local development defaults to
+The repository root contains a `render.yaml` Blueprint that configures the
+Express API and this frontend together. In Render, choose **New → Blueprint
+Instance**, connect this repository, and apply the Blueprint. Enter your
+MongoDB Atlas connection string when prompted for `MONGO_URI`; `JWT_SECRET` is
+generated automatically. The frontend receives the backend host automatically.
+
+For manual deployment, set `VITE_API_URL` to the deployed Express backend's
+base URL and rebuild the frontend. Local development defaults to
 `http://localhost:3000`.
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.

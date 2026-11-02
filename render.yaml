@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: project-collector-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+
+  - type: web
+    name: project-collector-app
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: project-collector-api
+          property: host
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
