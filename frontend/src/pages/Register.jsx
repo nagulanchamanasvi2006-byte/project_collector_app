@@ -28,7 +28,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/api/user/register",
+        "https://project-collector-app.onrender.com",
         {
           method: "POST",
           headers: {

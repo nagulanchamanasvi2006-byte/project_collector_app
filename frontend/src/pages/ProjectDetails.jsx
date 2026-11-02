@@ -13,7 +13,7 @@ function ProjectDetails() {
     async function fetchProject() {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/project/${id}`
+          "https://project-collector-app.onrender.com"
         );
 
         const data = await response.json();

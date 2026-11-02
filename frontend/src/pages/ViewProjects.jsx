@@ -40,7 +40,7 @@ function ViewProjects() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/project/${id}`,
+        "https://project-collector-app.onrender.com",
         {
           method: "DELETE"
         }
