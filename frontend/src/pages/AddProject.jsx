@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { apiUrl } from "../api";
 
 function AddProject() {
   const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ function AddProject() {
     };
 
     try {
-      const response = await fetch("https://project-collector-app.onrender.com", {
+      const response = await fetch(apiUrl("/api/project"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

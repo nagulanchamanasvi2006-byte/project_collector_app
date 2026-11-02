@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { apiUrl } from "../api";
 
 function Login() {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        "https://project-collector-app.onrender.com",
+        apiUrl("/api/auth/login"),
         {
           method: "POST",
           headers: {

@@ -1,5 +1,12 @@
 # React + Vite
 
+## Backend API
+
+Set `VITE_API_URL` to the base URL of the deployed Express backend in the
+frontend hosting service, then rebuild and redeploy the frontend. Do not include
+an API path or trailing slash. Local development defaults to
+`http://localhost:3000`.
+
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
 Currently, two official plugins are available:

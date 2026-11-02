@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { apiUrl } from "../api";
 
 function ProjectDetails() {
   const { id } = useParams();
@@ -13,7 +14,7 @@ function ProjectDetails() {
     async function fetchProject() {
       try {
         const response = await fetch(
-          "https://project-collector-app.onrender.com"
+          apiUrl(`/api/project/${id}`)
         );
 
         const data = await response.json();

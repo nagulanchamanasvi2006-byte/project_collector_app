@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { apiUrl } from "../api";
 
 function Register() {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        "https://project-collector-app.onrender.com",
+        apiUrl("/api/auth/register"),
         {
           method: "POST",
           headers: {

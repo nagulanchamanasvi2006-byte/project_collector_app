@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { apiUrl } from "../api";
 
 function ViewProjects() {
   const [projects, setProjects] = useState([]);
@@ -12,7 +13,7 @@ function ViewProjects() {
 
   const fetchProjects = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/project");
+      const response = await fetch(apiUrl("/api/project"));
 
       if (!response.ok) {
         throw new Error("Failed to fetch projects");
@@ -40,7 +41,7 @@ function ViewProjects() {
 
     try {
       const response = await fetch(
-        "https://project-collector-app.onrender.com",
+        apiUrl(`/api/project/${id}`),
         {
           method: "DELETE"
         }

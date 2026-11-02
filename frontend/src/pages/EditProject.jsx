@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { apiUrl } from "../api";
 
 function EditProject() {
   const { id } = useParams();
@@ -23,7 +24,7 @@ function EditProject() {
   const fetchProject = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/project/${id}`
+        apiUrl(`/api/project/${id}`)
       );
 
       const project = await response.json();
@@ -69,7 +70,7 @@ function EditProject() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/project/${id}`,
+        apiUrl(`/api/project/${id}`),
         {
           method: "PUT",
           headers: {
