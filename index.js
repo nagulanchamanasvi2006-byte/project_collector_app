@@ -4,6 +4,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
+if (!process.env.JWT_SECRET) {
+    throw new Error("JWT_SECRET is required. Add it to the root .env file or backend environment variables.");
+}
+
 const userroutes = require("./routes/userroutes");
 const projectroutes = require("./routes/projectroutes");
 const categoryroutes = require("./routes/categoryroutes");
