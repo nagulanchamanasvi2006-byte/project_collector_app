@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 
 // MongoDB Connection
 mongoose.connect(
-    process.env.MONGO_URI || "mongodb://127.0.0.1:27017/project_collector"
+    process.env.MONGO_URI || "mongodb+srv://nagulanchamanasvi2006_db_user:zq13uUcWUhBMfWo4@cluster0.9ghej8w.mongodb.net/project_collector"
 )
 .then(() => {
     console.log("Connected to MongoDB successfully");
