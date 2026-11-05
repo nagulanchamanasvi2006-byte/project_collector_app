@@ -5,7 +5,7 @@ const apiBaseUrl = configuredApiUrl
       : `https://${configuredApiUrl}`
     ).replace(/\/+$/, "")
   : import.meta.env.DEV
-    ? "http://localhost:3000"
+    ? "http://https://project-collector-app.onrender.com"
     : "";
 
 export function apiUrl(path) {

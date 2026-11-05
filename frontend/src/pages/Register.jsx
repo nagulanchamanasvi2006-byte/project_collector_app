@@ -29,7 +29,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        apiUrl("/api/auth/register"),
+        apiUrl("https://project-collector-app.onrender.com/api/auth/register"),
         {
           method: "POST",
           headers: {

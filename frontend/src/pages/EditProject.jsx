@@ -24,7 +24,7 @@ function EditProject() {
   const fetchProject = async () => {
     try {
       const response = await fetch(
-        apiUrl(`/api/project/${id}`)
+        apiUrl(`https://project-collector-app.onrender.com/api/project/${id}`)
       );
 
       const project = await response.json();

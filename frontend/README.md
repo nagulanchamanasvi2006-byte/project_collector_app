@@ -10,7 +10,7 @@ generated automatically. The frontend receives the backend host automatically.
 
 For manual deployment, set `VITE_API_URL` to the deployed Express backend's
 base URL and rebuild the frontend. Local development defaults to
-`http://localhost:3000`.
+`http://https://project-collector-app.onrender.com`.
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 

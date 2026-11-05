@@ -28,7 +28,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        apiUrl("/api/auth/login"),
+        apiUrl("https://project-collector-app.onrender.com/api/auth/login"),
         {
           method: "POST",
           headers: {

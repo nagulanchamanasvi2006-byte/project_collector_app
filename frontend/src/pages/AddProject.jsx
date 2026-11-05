@@ -30,7 +30,7 @@ function AddProject() {
     };
 
     try {
-      const response = await fetch(apiUrl("/api/project"), {
+      const response = await fetch(apiUrl("https://project-collector-app.onrender.com/api/project"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
